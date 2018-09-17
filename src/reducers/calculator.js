@@ -4,6 +4,7 @@ const initialAppState = {
   inputValue: 0,
   resultValue: 0,
   showingResult: false,
+  pagename: 'calculator',
 };
 
 const calculator = (state = initialAppState, action) => {
