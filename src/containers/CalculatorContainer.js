@@ -8,12 +8,14 @@ import PlusBtn from '../components/PlusBtn';
 import MinusBtn from '../components/MinusBtn';
 import ClearBtn from '../components/ClearBtn';
 import Result from '../components/Result';
+// import ResultDisplay from '../components/ResultDisplay/ResultDisplay'
 
 class CalculatorContainer extends Component {
   render() {
     const { calculator, actions } = this.props;
     return (
-      <div>
+      <div style={{textAlign:"center"}}>
+        <Result result={calculator.showingResult ? calculator.resultValue : calculator.inputValue} maxLength={5}/>
         <div>
           <NumBtn n={1} onClick={() => actions.onNumClick(1)} />
           <NumBtn n={2} onClick={() => actions.onNumClick(2)} />
@@ -35,7 +37,6 @@ class CalculatorContainer extends Component {
           <MinusBtn onClick={actions.onMinusClick} />
           <ClearBtn onClick={actions.onClearClick} />
         </div>
-        <Result result={calculator.showingResult ? calculator.resultValue : calculator.inputValue} />
       </div>
     );
   }
