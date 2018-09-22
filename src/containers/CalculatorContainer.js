@@ -15,9 +15,7 @@ class CalculatorContainer extends Component {
     const { calculator, actions } = this.props;
     return (
       <div style={{textAlign:"center"}}>
-        {/* <div>
-          <ResultDisplay/>
-        </div> */}
+        <Result result={calculator.showingResult ? calculator.resultValue : calculator.inputValue} maxLength={5}/>
         <div>
           <NumBtn n={1} onClick={() => actions.onNumClick(1)} />
           <NumBtn n={2} onClick={() => actions.onNumClick(2)} />
@@ -39,7 +37,6 @@ class CalculatorContainer extends Component {
           <MinusBtn onClick={actions.onMinusClick} />
           <ClearBtn onClick={actions.onClearClick} />
         </div>
-        <Result result={calculator.showingResult ? calculator.resultValue : calculator.inputValue} />
       </div>
     );
   }

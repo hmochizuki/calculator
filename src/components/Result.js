@@ -1,9 +1,13 @@
 import React from 'react'
 
 
-const Result = ({ result }) => (
+const Result = ({ result }, maxLength) => (
   <div>
-    Result: <span>{result}</span>
+    <input 
+      type="text"
+      value={result}
+      maxLength={maxLength}
+    />
   </div>
 )
 
