@@ -10,7 +10,7 @@ class App extends Component {
     const { app, actions } = this.props;
     return (
     <dev>
-      <Header onClick={() => actions.changeContents} status={app.status}/>
+      <Header onClick={() => actions.changeContents} contents={app.contents}/>
       <CalculatorContainer />
     </dev>
     );
