@@ -1,5 +1,5 @@
-import * as app from '../utils/actionTypes/app'
+import * as actionTypes from '../utils/actionTypes/app'
 
 export const changeContents = () => ({
-  type: app.CHANGE_MAIN_CONTENTS,
+  type: actionTypes.CHANGE_MAIN_CONTENTS,
 })
