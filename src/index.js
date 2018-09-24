@@ -2,17 +2,15 @@ import React from 'react';
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import CalculatorContainer from './containers/CalculatorContainer'
-import Header from './components/Header/Header'
 import reducer from './reducers'
+import App from './containers/App';
 
 const store = createStore(reducer)
 
 render(
   <dev>
-    <Header/>
     <Provider store={store}>
-      <CalculatorContainer />
+      <App />
     </Provider>
   </dev>,
   document.getElementById('root')
