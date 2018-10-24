@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Header from '../components/Header/Header'
-import CalculatorContainer from './CalculatorContainer'
 import * as actions from '../actions/app';
+import Main from './Main';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
     return (
     <dev>
       <Header onClick={() => actions.changeContents} contents={app.contents}/>
-      <CalculatorContainer />
+      <Main contents={app.contents}/>
     </dev>
     );
   }
