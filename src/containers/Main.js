@@ -21,6 +21,7 @@ const Main = ({ contents }) => {
   }
 }
 
+//TODO connectいる？ propsからうけとるか、stateからとってくるか
 const mapState = (state, ownProps) => ({
   app: state.app,
 });

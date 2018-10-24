@@ -11,7 +11,7 @@ class App extends Component {
     return (
     <dev>
       <Header onClick={() => actions.changeContents} contents={app.contents}/>
-      <Main  contents={app.contents}/>
+      <Main contents={app.contents}/>
     </dev>
     );
   }
