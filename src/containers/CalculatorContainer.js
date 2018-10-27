@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import * as actions from '../actions/calculator';
 import Calculator from '../components/Calculator/Caliculator'
 

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Result = ({ result }, maxLength) => (
   <div>
     <input 

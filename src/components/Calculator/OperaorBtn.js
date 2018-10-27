@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const MinusBtn = ({ onClick }) => (
+const OperatorBtn = ({writing,onClick}) => (
   <button onClick={ onClick } style={{
     color:'rgb(50, 150, 250)',
     backgroundColor: 'rgba(3, 169, 244, 0.08)',
@@ -9,11 +9,11 @@ const MinusBtn = ({ onClick }) => (
     height: '30px',
     margin: '1px',
     border: 'outset rgb(50,150,250)',
-  }}>-</button>
+  }}>{writing}</button>
 )
 
-MinusBtn.propTypes = {
+OperatorBtn.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default MinusBtn
+export default OperatorBtn

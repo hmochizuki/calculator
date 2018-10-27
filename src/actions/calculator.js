@@ -12,5 +12,10 @@ export const onMinusClick = () => ({
 });
 export const onClearClick = () => ({
   type: actionTypes.CLEAR,
-  resultValue: 0,
+  preNumber: 0,
+  curNumber: 0,
+  operatorType: '',
 });
+export const onEqualClick = () => ({
+  type: actionTypes.EQUAL,
+})
