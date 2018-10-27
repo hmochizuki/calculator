@@ -10,6 +10,12 @@ export const onPlusClick = () => ({
 export const onMinusClick = () => ({
   type: actionTypes.MINUS,
 });
+export const onTimesClick = () => ({
+  type: actionTypes.TIMES,
+});
+export const onDevidedClick = () => ({
+  type: actionTypes.DEVIDED,
+});
 export const onClearClick = () => ({
   type: actionTypes.CLEAR,
   preNumber: 0,

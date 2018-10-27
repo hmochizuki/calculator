@@ -10,7 +10,7 @@ const Result = ({ result }, maxLength) => (
         borderRadius: '5%',
         border: 'outset rgb(50,150,250)',
         textAlign: 'right',
-        width: '120px',
+        width: '150px',
         height: '15px',
         color: 'rgb(50,150,250)',
         backgroundColor: 'rgba(3, 169, 244, 0.05)',

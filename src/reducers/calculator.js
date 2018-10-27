@@ -16,7 +16,7 @@ const calculate = (preNumber, curNumber, operatorType) => {
       return preNumber - curNumber
     case 'times':
       return preNumber * curNumber
-    case 'divided':
+    case 'devided':
       return preNumber / curNumber
     default:
       return 0
@@ -46,7 +46,22 @@ const calculator = (state = initialAppState, action) => {
       operatorType: 'minus',
       isEqualed: false,
     };
-    
+  }else if (action.type === actionTypes.TIMES) {
+    return {
+      ...state,
+      preNumber:state.curNumber,
+      curNumber: 0,
+      operatorType: 'times',
+      isEqualed: false,
+    };
+  }else if (action.type === actionTypes.DEVIDED) {
+    return {
+      ...state,
+      preNumber:state.curNumber,
+      curNumber: 0,
+      operatorType: 'devided',
+      isEqualed: false,
+    };
   } else if (action.type === actionTypes.EQUAL) {
     const result = calculate(state.preNumber, state.curNumber, state.operatorType)
     return {
