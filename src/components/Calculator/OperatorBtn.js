@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-const OperatorBtn = ({writing,onClick}) => (
-  <button onClick={ onClick } style={{
+const OperatorBtn = ({writing,onClick,disabled}) => (
+  <button onClick={ onClick } disabled={disabled} style={{
     color:'rgb(50, 150, 250)',
     backgroundColor: 'rgb(200,200,200,0.35)',
     borderRadius: '100%',

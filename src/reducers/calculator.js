@@ -4,7 +4,6 @@ const initialAppState = {
   preNumber: 0,
   curNumber: 0,
   operatorType: '',
-  isEqualed: false,
   pagename: 'calculator',
 };
 
@@ -28,7 +27,6 @@ const calculator = (state = initialAppState, action) => {
     return {
       ...state,
       curNumber: state.curNumber * 10 + action.number,
-      isEqualed: false,
     };
   } else if (action.type === actionTypes.PLUS) {
     return {
@@ -36,7 +34,6 @@ const calculator = (state = initialAppState, action) => {
       preNumber: state.curNumber,
       curNumber: 0,
       operatorType: 'plus',
-      isEqualed: false,
     };
   } else if (action.type === actionTypes.MINUS) {
     return {
@@ -44,7 +41,6 @@ const calculator = (state = initialAppState, action) => {
       preNumber:state.curNumber,
       curNumber: 0,
       operatorType: 'minus',
-      isEqualed: false,
     };
   }else if (action.type === actionTypes.TIMES) {
     return {
@@ -52,7 +48,6 @@ const calculator = (state = initialAppState, action) => {
       preNumber:state.curNumber,
       curNumber: 0,
       operatorType: 'times',
-      isEqualed: false,
     };
   }else if (action.type === actionTypes.DEVIDED) {
     return {
@@ -60,7 +55,6 @@ const calculator = (state = initialAppState, action) => {
       preNumber:state.curNumber,
       curNumber: 0,
       operatorType: 'devided',
-      isEqualed: false,
     };
   } else if (action.type === actionTypes.EQUAL) {
     const result = calculate(state.preNumber, state.curNumber, state.operatorType)
@@ -69,7 +63,6 @@ const calculator = (state = initialAppState, action) => {
       preNumber: 0,
       curNumber: result,
       operatorType: '',
-      isEqualed: true,
     };
   }
    else if (action.type === actionTypes.CLEAR) {
