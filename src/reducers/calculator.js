@@ -5,7 +5,8 @@ const initialAppState = {
   curNumber: 0,
   operatorType: '',
   pagename: 'calculator',
-};
+  isPushedOperator: false,
+}
 
 const calculate = (preNumber, curNumber, operatorType) => {
   switch (operatorType) {
@@ -23,57 +24,44 @@ const calculate = (preNumber, curNumber, operatorType) => {
 }
 
 const calculator = (state = initialAppState, action) => {
-  if (action.type === actionTypes.INPUT_NUMBER) {
-    return {
-      ...state,
-      curNumber: state.curNumber * 10 + action.number,
-    };
-  } else if (action.type === actionTypes.PLUS) {
-    return {
-      ...state,
-      preNumber: state.curNumber,
-      curNumber: 0,
-      operatorType: 'plus',
-    };
-  } else if (action.type === actionTypes.MINUS) {
-    return {
-      ...state,
-      preNumber:state.curNumber,
-      curNumber: 0,
-      operatorType: 'minus',
-    };
-  }else if (action.type === actionTypes.TIMES) {
-    return {
-      ...state,
-      preNumber:state.curNumber,
-      curNumber: 0,
-      operatorType: 'times',
-    };
-  }else if (action.type === actionTypes.DEVIDED) {
-    return {
-      ...state,
-      preNumber:state.curNumber,
-      curNumber: 0,
-      operatorType: 'devided',
-    };
-  } else if (action.type === actionTypes.EQUAL) {
-    const result = calculate(state.preNumber, state.curNumber, state.operatorType)
-    return {
-      ...state,
-      preNumber: 0,
-      curNumber: result,
-      operatorType: '',
-    };
+  const { type } = action
+  switch(type) {
+    case actionTypes.INPUT_NUMBER:
+      return {
+        ...state,
+        curNumber: state.curNumber * 10 + action.number,
+        isPushedOperator: false,
+      }
+    case actionTypes.PLUS:
+    case actionTypes.MINUS:
+    case actionTypes.TIMES:
+    case actionTypes.DEVIDED:
+      return {
+        ...state,
+        preNumber: state.isPushedOperator ? state.preNumber : state.curNumber,
+        curNumber: state.isPushedOperator ? state.curNumber : 0,
+        operatorType: type.toLowerCase(),
+        isPushedOperator: true,
+      }
+    case actionTypes.EQUAL:
+      const result = calculate(state.preNumber, state.curNumber, state.operatorType)
+      return {
+        ...state,
+        preNumber: 0,
+        curNumber: result,
+        operatorType: '',
+        isPushedOperator: false,
+      }
+    case actionTypes.CLEAR:
+      return {
+        ...state,
+        curNumber: action.curNumber,
+        isEqualed: true,
+        isPushedOperator: false,
+      }
+    default:
+      return state
+    }
   }
-   else if (action.type === actionTypes.CLEAR) {
-    return {
-      ...state,
-      curNumber: action.curNumber,
-      isEqualed: true,
-    };
-  } else {
-    return state;
-  }
-};
 
-export default calculator;
+export default calculator
