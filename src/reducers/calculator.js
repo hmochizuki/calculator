@@ -55,7 +55,9 @@ const calculator = (state = initialAppState, action) => {
     case actionTypes.CLEAR:
       return {
         ...state,
-        curNumber: action.curNumber,
+        preNumber: 0,
+        curNumber: 0,
+        operatorType: '',
         isEqualed: true,
         isPushedOperator: false,
       }
