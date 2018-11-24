@@ -10,6 +10,12 @@ const Main = ({ contents }) => {
           <Calculator contents={contents}/>
         </div>
       )
+      case 'todoList':
+        return(
+          <div>
+            <p>aaa</p>
+          </div>
+        )
     default:
       return(
         <div>

@@ -1,7 +1,8 @@
 import * as actionTypes from '../utils/actionTypes/app';
 
 const initialState = {
-  contents : 'calculator'
+  contentsList : ['calculator', 'todoList'],
+  contents : 'calculator',
 }
 
 const app = (state = initialState, action ) => {
