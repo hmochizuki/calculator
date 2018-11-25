@@ -9,7 +9,7 @@ const app = (state = initialState, action ) => {
   if(action.type === actionTypes.CHANGE_MAIN_CONTENTS) {
     return{
       ...state,
-      contents: state.contents
+      contents: action.contentName,
     }
   }
   else {

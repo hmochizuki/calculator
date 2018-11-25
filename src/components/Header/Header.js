@@ -3,11 +3,11 @@ import React, {Component} from 'react'
 
 class Header extends Component {
   render() {
-    const { app } = this.props
+    const { app, changeContent } = this.props
     const { contentsList } = app
     const contentButtons = contentsList.map((content) =>
       <div key={content}>
-        <button>{content}</button><br/>
+        <button onClick={() => changeContent(content)}>{content}</button><br/>
       </div>
     )
     return (
