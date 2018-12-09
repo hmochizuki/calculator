@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import Calculator from './CalculatorContainer'
+import Board from './../components/Reversi/Board'
 
 const chooseMainContent = (content) => {
   switch(content) {
     case 'calculator':
       return(<div><Calculator/></div>)
-    case 'todoList':
-      return(<div><p>aaa</p></div>)
+    case 'reversi':
+      return(<div><Board/></div>)
     default:
       return(<div>coming soon!</div>)
   }
@@ -18,7 +19,7 @@ class Main extends Component {
   render() {
     const {contents} = this.props
     return (
-    <div>{chooseMainContent(contents)}</div>
+    <div style={{textAlign: 'center'}}>{chooseMainContent(contents)}</div>
     )
   }
 }
