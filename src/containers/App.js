@@ -10,7 +10,7 @@ class App extends Component {
     const { app, actions } = this.props;
     return (
     <dev>
-      <Header onClick={() => actions.changeContents} contents={app.contents}/>
+      <Header changeContent={actions.changeContent} app={app}/>
       <Main contents={app.contents}/>
     </dev>
     );

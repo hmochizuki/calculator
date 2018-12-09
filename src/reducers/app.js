@@ -1,14 +1,15 @@
 import * as actionTypes from '../utils/actionTypes/app';
 
 const initialState = {
-  contents : 'calculator'
+  contentsList : ['calculator', 'todoList'],
+  contents : 'calculator',
 }
 
 const app = (state = initialState, action ) => {
   if(action.type === actionTypes.CHANGE_MAIN_CONTENTS) {
     return{
       ...state,
-      contents: state.contents
+      contents: action.contentName,
     }
   }
   else {
