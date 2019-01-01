@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import Calculator from './CalculatorContainer'
-import Board from './../components/Reversi/Board'
+import Reversi from './Reversi'
 
 const chooseMainContent = (content) => {
   switch(content) {
     case 'calculator':
       return(<div><Calculator/></div>)
     case 'reversi':
-      return(<div><Board/></div>)
+      return(<div><Reversi/></div>)
     default:
       return(<div>coming soon!</div>)
   }

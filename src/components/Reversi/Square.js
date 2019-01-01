@@ -9,8 +9,8 @@ const square = {
   borderWidth: '0.1px',
 }
 
-const Square = ({color}) => (
-  <button style={square}>
+const Square = ({color, onClick}) => (
+  <button style={square} onClick={onClick}>
     <Piece color={color}/>
   </button>
 )
