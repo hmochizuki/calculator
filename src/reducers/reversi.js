@@ -3,7 +3,7 @@ const REVERSI = 'reversi'
 const SET_PEICE = 'set_piece'
 
 // actions
-export const onSquareClick = (square) => console.log(square) || ({
+export const onSquareClick = (square) => ({
   type: SET_PEICE,
   square, 
 })
